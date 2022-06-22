@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +12,7 @@ use App\Http\Controllers\ClienteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
 Route::redirect('/', '/cidades', 301);
-Route::resource('cidades', 'CidadeController');
+
+Route::resource('/cidades', 'CidadeController');
+

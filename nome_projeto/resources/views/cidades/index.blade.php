@@ -1,5 +1,5 @@
 <h2>Lista de Cidade</h2>
-<a href="{{ route('cidade.create') }}"><h4>Novo Cliente</h4></a>
+<a href="{{ route('cidades.create') }}"><h4>Novo Cliente</h4></a>
 <table>
    <thead>
        <tr>
@@ -13,16 +13,16 @@
    </thead>
    <tbody>
        
-       @foreach ($cidade as $item)
+       @foreach ($cidades as $item)
            <tr>
                
                <td>{{ $item['id'] }}</td>
                <td>{{ $item['nome'] }}</td>
                <td>{{ $item['porte'] }}</td>
-               <td><a href="{{ route('cidade.show', $item['id']) }}">info</a></td>
-               <td><a href="{{ route('cidade.edit', $item['id']) }}">editar</a></td>
+               <td><a href="{{ route('cidades.show', $item['id']) }}">info</a></td>
+               <td><a href="{{ route('cidades.edit', $item['id']) }}">editar</a></td>
                <td>
-                   <form action="{{ route('cidade.destroy', $item['id']) }}" method="POST">
+                   <form action="{{ route('cidades.destroy', $item['id']) }}" method="POST">
                        <!-- Token de Segurança -->
                        <!-- Define o método de submissão como delete -->
                        @csrf
